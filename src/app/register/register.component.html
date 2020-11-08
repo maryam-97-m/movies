@@ -1,0 +1,56 @@
+<div *ngIf='err' class="alert alert-danger m-2">
+    {{err}}
+</div>
+<form [formGroup]='registerForm' (ngSubmit)='getFormData(registerForm)' class="w-75 m-auto py-4">
+    
+    <div class="form-group">
+        <label>firstName</label>
+        <input [class.is-invalid]='registerForm.get("first_name").invalid == true && 
+        registerForm.get("first_name").touched == true' 
+        [class.is-valid]='registerForm.get("first_name").invalid == false && 
+        registerForm.get("first_name").touched == true' formControlName='first_name' type="text" class=" form-control">
+        <span *ngIf='registerForm.get("first_name").invalid == true && registerForm.get("first_name").touched == true' 
+        class="text-danger d-block m-3 p-2 text-danger">firstName must be between [3 : 8] alphapets</span>    
+    </div>
+    
+    <div class="form-group">
+        <label>lastName</label>
+        <input [class.is-invalid]='registerForm.get("last_name").invalid == true && registerForm.get("last_name").touched == true' 
+        [class.is-valid]='registerForm.get("last_name").invalid == false && 
+        registerForm.get("last_name").touched == true' 
+        formControlName='last_name' type="text" class=" form-control">
+        <span *ngIf='registerForm.get("last_name").invalid == true && registerForm.get("last_name").touched == true' 
+        class="text-danger d-block m-3 p-2 text-danger">lasttName must be between [3 : 8] alphapets</span>    
+    </div>
+    
+
+    <div class="form-group">
+        <label>Age</label>
+        <input [class.is-invalid]='registerForm.get("age").invalid == true && registerForm.get("age").touched == true' 
+        [class.is-valid]='registerForm.get("age").invalid == false && registerForm.get("age").touched == true' 
+        formControlName='age' type="number" class=" form-control">
+        <span *ngIf='registerForm.get("age").invalid == true && registerForm.get("age").touched == true' class="text-danger d-block m-3 p-2 text-danger">Age must be between [16 : 60]years old</span>    
+    </div>
+    
+
+    <div class="form-group">
+        <label>email</label>
+        <input [class.is-invalid]='registerForm.get("email").invalid == true && registerForm.get("email").touched == true' 
+        [class.is-valid]='registerForm.get("email").invalid == false && registerForm.get("email").touched == true' 
+        formControlName='email' type="email" class=" form-control">
+        <span *ngIf='registerForm.get("email").invalid == true && registerForm.get("email").touched == true' class="text-danger d-block m-3 p-2 text-danger">email must have [@]</span>    
+    </div>
+    
+
+    <div class="form-group">
+        <label>password</label>
+        <input [class.is-invalid]='registerForm.get("password").invalid == true && registerForm.get("password").touched == true' 
+        [class.is-valid]='registerForm.get("password").invalid == false && registerForm.get("password").touched == true' 
+        formControlName='password' type="password" class=" form-control">
+        <span *ngIf='registerForm.get("password").invalid == true && registerForm.get("password").touched == true' class="text-danger d-block m-3 p-2 text-danger">password must start with capital alphapet then between [3 : 8] alphapets or numbers</span>    
+    </div>
+    
+
+    <button [disabled]='registerForm.invalid == true ' type="submit" class="btn btn-mine">register</button>
+
+</form>

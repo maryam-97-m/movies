@@ -1,0 +1,41 @@
+
+<nav class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                logo
+            </div>
+            <div class="col-md-8">
+                <ul class="list-unstyled d-flex justify-content-around">
+                    <li>
+                        <a *ngIf='_AuthService.loggedIn()' routerLinkActive='active' routerLink='/home'>Home</a>
+                    </li>
+                    
+                    <li>
+                        <a *ngIf='_AuthService.loggedIn()' routerLinkActive='active'  routerLink='/tv'>TV</a>
+                    </li>
+                    <li>
+                        <a *ngIf='_AuthService.loggedIn()' routerLinkActive='active'  routerLink='/movies'>Movies</a>
+                    </li>
+                   
+                </ul>
+    
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled d-flex justify-content-around">
+                    <li>
+                        <a *ngIf='!_AuthService.loggedIn()' routerLinkActive='active'  routerLink = '/register'>Register</a>
+                    </li>
+                    <li>
+                        <a *ngIf='!_AuthService.loggedIn()' routerLinkActive='active'  routerLink = '/signin'>Log in</a>
+                    </li>
+                    <li>
+                        <a *ngIf='_AuthService.loggedIn()' (click)='_AuthService.logoutUser()' routerLinkActive='active'  routerLink='/signin'>Log out</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</nav>

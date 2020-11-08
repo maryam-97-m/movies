@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,0.6);
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+$fontFamily:'segoe ui light';
+$mainColor:#f8f8f8;
+$secondColor:#ef4836;
+$darkColor:#212121;
+$boxShadow: 0 5px 13px 0px rgba(0, 0, 0, 0.1);
+.bgFont
+{
+    font-size:18px;
+}
+.movie-media
+{
+    width:50px;
+    height:50px;
+}
+a
+{
+    color:$fontColor !important;
+}
+.secondFontColor
+{
+    color: $secondFontColor;
+}
+.btn-mine
+{
+    background-color: $lightBgColor;
+    color: $fontColor;
+}
+.btn-outline-mine
+{
+    color: $lightBgColor;
+    border: solid 1px $lightBgColor;
+}
+body{
+    background-color: $darkColor;
+    color:$fontColor !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.movie-item img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+.vote
+{
+    
+    
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    background-color: $lightBgColor;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
